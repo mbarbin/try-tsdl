@@ -1,0 +1,21 @@
+opam-version: "2.0"
+synopsis: "Trying to build a tsdl project in GitHub Actions"
+description: "Trying to build a tsdl project in GitHub Actions"
+maintainer: "Mathieu Barbin"
+authors: "Mathieu Barbin"
+license: "MIT"
+homepage: "https://github.com/mbarbin/try-tsdl"
+doc: "https://github.com/mbarbin/try-tsdl"
+bug-reports: "https://github.com/mbarbin/try-tsdl/issues"
+depends: [
+  "ocaml" {>= "4.13"}
+  "dune" {>= "3.5"}
+  "tsdl" {>= "0.9.8"}
+  "tsdl-image" {>= "0.5"}
+]
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/mbarbin/try-tsdl.git"
