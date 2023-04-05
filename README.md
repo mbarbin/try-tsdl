@@ -8,6 +8,8 @@ with a smaller repo.
 
 ## Build issue
 
+https://github.com/dbuenzli/tsdl/issues/92
+
 The issue happens during the execution of the GitHub Actions workflow.
 
 ```
